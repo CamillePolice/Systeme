@@ -28,7 +28,7 @@ int main() {
         if (command2[ln2] == '\n')
           command2[ln2] = '\0';
 
-        if (strcmp(command, "exit") != 0 && strcmp(command2, "exit") != 0) {
+        if (strcmp(command, "exit") && strcmp(command2, "exit")) {
             char tmp_command[100];
             char tmp_command2[100];
 
