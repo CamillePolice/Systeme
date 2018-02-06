@@ -85,8 +85,7 @@ void execute_command(char *command) {
 
 void rec_exec(char *command[], int fd[][2], int nb_command, int i) {
     pipe(fd[i]);
-    if(pipe(fd)<0)
-      return;
+
     if (i<nb_command-1 && fork()==0){
         rec_exec(command, fd, nb_command, ++i);
         return;
