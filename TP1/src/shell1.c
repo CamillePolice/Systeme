@@ -29,6 +29,5 @@ int main() {
         else
             wait(&status);
     } while (1);
-
     return 0;
 }

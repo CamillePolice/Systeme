@@ -17,7 +17,7 @@ int main() {
         if (command[ln] == '\n')
             command[ln] = '\0';
 
-        if (strcmp(command, "exit")) {
+        if (strcmp(command, "exit") != 0) {
             char tmp_command[100];
             strcpy(tmp_command, command);
             char *token = strtok(tmp_command, " ");
