@@ -6,3 +6,5 @@ nom du programme. Par exemple, au lieu de lancer:
 il faut lancer:
 padsp ./a.out
 
+Pour lire le fichier avec lecture.c, veuillez seulement indiquer le nom
+de ce fichier sans son extension.

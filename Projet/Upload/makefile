@@ -6,14 +6,10 @@ SRC=./src
 CFLAGS += -ggdb -Wall
 HFILES=-I./include
 
-all: bin/lecture bin/audioclient bin/audioserver
+all: bin/lecture
 
 bin/lecture:	$(OBJ)/lecture.o $(OBJ)/audio.o
 	gcc -o $@ $^
-bin/audioclient:	$(OBJ)/audioclient.o
-		gcc -o $@ $^
-bin/audioserver:	$(OBJ)/audioserver.o
-				gcc -o $@ $^
 # macro interne à make
 # $@ : fait référence à la cible.
 # $^ : contient tous les composants d'une règle.
@@ -22,14 +18,6 @@ bin/audioserver:	$(OBJ)/audioserver.o
 obj/lecture.o: $(SRC)/lecture.c
 # To be completed
 	gcc -o $(OBJ)/lecture.o $(HFILES) -c -Wall $(SRC)/lecture.c
-
-obj/audioclient.o: $(SRC)/audioclient.c
-# To be completed
-	gcc -o $(OBJ)/audioclient.o $(HFILES) -c -Wall $(SRC)/audioclient.c
-
-obj/audioserver.o: $(SRC)/audioserver.c
-# To be completed
-	gcc -o $(OBJ)/audioserver.o $(HFILES) -c -Wall $(SRC)/audioserver.c
 
 obj/audio.o: $(SRC)/audio.c
 	# To be completed
