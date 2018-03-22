@@ -10,9 +10,9 @@ all: bin/lecture bin/audioclient bin/audioserver
 
 bin/lecture:	$(OBJ)/lecture.o $(OBJ)/audio.o
 	gcc -o $@ $^
-bin/audioclient:	$(OBJ)/audioclient.o
+bin/audioclient:	$(OBJ)/audioclient.o $(OBJ)/audio.o $(OBJ)/filters.o
 		gcc -o $@ $^
-bin/audioserver:	$(OBJ)/audioserver.o
+bin/audioserver:	$(OBJ)/audioserver.o $(OBJ)/audio.o
 				gcc -o $@ $^
 # macro interne à make
 # $@ : fait référence à la cible.
@@ -34,6 +34,10 @@ obj/audioserver.o: $(SRC)/audioserver.c
 obj/audio.o: $(SRC)/audio.c
 	# To be completed
 		gcc -o $(OBJ)/audio.o $(HFILES) -c -Wall $(SRC)/audio.c
+
+obj/filters.o: $(SRC)/filters.c
+# To be completed
+	gcc -o $(OBJ)/filters.o $(HFILES) -c -Wall $(SRC)/filters.c
 #
 # Listing creation in pdf
 #
