@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "filter.h"
+#include "filters.h"
 
 void stereoToMono(char buff[], int *length) {
 	for (int i=0; i<*length; i+=4) {
